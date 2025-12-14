@@ -1,0 +1,9 @@
+global using Xunit;
+global using Moq;
+global using FluentAssertions;
+global using TH2.Products.Domain.Entities;
+global using TH2.Products.Domain.Interfaces;
+global using TH2.Products.Domain.Services;
+global using TH2.Products.API.Controllers;
+global using TH2.Products.API.DTOs;
+global using Microsoft.AspNetCore.Mvc;

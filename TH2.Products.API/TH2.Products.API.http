@@ -1,0 +1,100 @@
+#@TH2.Products.API_HostAddress = https://localhost:7082
+@TH2.Products.API_HostAddress = http://localhost:5279
+
+### Get all products
+GET {{TH2.Products.API_HostAddress}}/api/products
+Accept: application/json
+
+###
+
+### Get product by ID
+GET {{TH2.Products.API_HostAddress}}/api/products/1
+Accept: application/json
+
+###
+
+### Search products - basic search
+GET {{TH2.Products.API_HostAddress}}/api/products/search?searchTerm=laptop
+Accept: application/json
+
+###
+
+### Search products - winter search (should find Winter Jacket and Winter Boots)
+GET {{TH2.Products.API_HostAddress}}/api/products/search?searchTerm=winter
+Accept: application/json
+
+###
+
+### Search products - with multiple filters
+GET {{TH2.Products.API_HostAddress}}/api/products/search?searchTerm=laptop phone&categoryId=1&minPrice=500&maxPrice=1500&inStock=true&sortBy=price&sortOrder=desc&pageNumber=1&pageSize=10
+Accept: application/json
+
+###
+
+### Search products - by category
+GET {{TH2.Products.API_HostAddress}}/api/products/search?categoryId=1
+Accept: application/json
+
+###
+
+### Search products - price range
+GET {{TH2.Products.API_HostAddress}}/api/products/search?minPrice=10&maxPrice=50&sortBy=price&sortOrder=asc
+Accept: application/json
+
+###
+
+### Search products - in stock only
+GET {{TH2.Products.API_HostAddress}}/api/products/search?inStock=true
+Accept: application/json
+
+###
+
+### Create a new product
+POST {{TH2.Products.API_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Wireless Mouse",
+  "description": "Ergonomic wireless mouse with USB receiver",
+  "price": 29.99,
+  "categoryId": 1,
+  "stockQuantity": 150
+}
+
+###
+
+### Update a product
+PUT {{TH2.Products.API_HostAddress}}/api/products/1
+Content-Type: application/json
+
+{
+  "name": "Laptop - Updated",
+  "description": "High-performance laptop with extended warranty",
+  "price": 1099.99,
+  "categoryId": 1,
+  "stockQuantity": 45
+}
+
+###
+
+### Delete a product (soft delete)
+DELETE {{TH2.Products.API_HostAddress}}/api/products/8
+
+###
+
+### Get all categories
+GET {{TH2.Products.API_HostAddress}}/api/categories
+Accept: application/json
+
+###
+
+### Create a new category
+POST {{TH2.Products.API_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Sports & Outdoors",
+  "description": "Sports equipment and outdoor gear"
+}
+
+###
