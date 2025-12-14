@@ -189,5 +189,4 @@ Assumptions made during development:
 - No authentication is required for the API
 - Automapper would not be required for this small project
 - Single-user scenario with low data volume expectations
-- Trade-offs in the design:
 - Index strategy was based on assumed common search patterns
